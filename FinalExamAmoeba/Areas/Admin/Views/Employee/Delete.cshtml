@@ -1,0 +1,22 @@
+﻿@model Employee
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <form asp-action="DeletePost" asp-controller="Employee" >
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/uploads/employees/@Model.ImageUrl" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.Name</h5>
+                        <p class="card-text">@Model.Field</p>
+                        <p class="card-text">@Model.Description</p>
+                        <input asp-for="@Model.Id" hidden value ="@Model.Id" />
+                        <a asp-action="index" asp-controller="Employee" class="btn btn-primary">Go back</a>
+                        <button type="submit" class="btn-dark" >Delete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
